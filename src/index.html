@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+   <div id="cont">
+    <h1>Введите данные</h1>
+    <div id="divForm">
+        <ul>
+            <li class='inputData'>
+                <input id="lolzLogin" name="lolzLogin" type="text" />
+                <label for="lolzLogin">Логин от LolZ</label>
+            </li>
+            <li class='inputData'>
+                <input id="lolzPass" name="lolzPass" type="text"/>
+                <label for="lolzPass">Пароль от LolZ</label>
+            </li>
+            <li class='inputData'>
+                <input id="gmailLogin" name="gmailLogin" type="text"/>
+                <label for="gmailLogin">Логин от Gmail</label>
+            </li>
+            <li class='inputData'>
+                <input id="gmailPass" name="gmailPass" type="text"/>
+                <label for="gmailPass">Пароль от Gmail</label>
+            </li>
+            <li class='inputData'>
+                <input id="maxPrice" name="maxPrice" type="text"/>
+                <label for="maxPrice">Максимальная цена(руб)</label>
+            </li>
+        </ul>
+        <button id='buttForm'>Начать</button>
+    </div>
+   </div>
+    <script>
+
+        const lolzLogin = document.querySelector('#lolzLogin');
+        const lolzPass = document.querySelector('#lolzPass');
+        const gmailLogin = document.querySelector('#gmailLogin');
+        const gmailPass = document.querySelector('#gmailPass');
+        const maxPrice = document.querySelector('#maxPrice');
+        const buttForm = document.querySelector('#buttForm');
+        
+        const fetchData = async () => {
+           await fetch('/', {
+            method: 'POST', headers: {
+                "Content-type": "text/plain"
+            }, body: `${lolzLogin.value},${lolzPass.value},${gmailLogin.value},${gmailPass.value},${maxPrice.value}`
+        })
+        }
+        
+        buttForm.addEventListener('click', () => {
+            fetchData()
+        })
+        // lolzLogin.addEventListener('change', () => {
+        //     lolzLogin = lolzLogin.value;
+        // })
+        // lolzPass.addEventListener('change', () => {
+        //     lolzPass = lolzPass.value;
+        // })
+        // gmailLogin.addEventListener('change', () => {
+        //     gmailLogin = gmailLogin.value;
+        // })
+        // gmailPass.addEventListener('change', () => {
+        //     gmailPass = gmailPass.value;
+        // })
+        
+    </script>
+</body>
+
+</html>

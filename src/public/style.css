@@ -1,0 +1,43 @@
+#cont{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin: 5px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+li{
+    list-style: none;
+}
+
+input{
+    width: 250px;
+    height: 25px;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#divForm{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+button{
+    border: none;
+    width: 90px;
+    height: 45px;
+    background-color: rgba(90, 76, 74, 0.322);
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 100px;
+}
